@@ -2,8 +2,8 @@ import { Exception } from '@adonisjs/core/exceptions'
 import { HttpContext } from '@adonisjs/core/http'
 
 export default class UnauthenticatedException extends Exception {
-  constructor() {
-    super('Unauthenticated' + 401) // Define default message and HTTP status code
+  constructor(message: string) {
+    super(message) // Define default message and HTTP status code
   }
 
   /**

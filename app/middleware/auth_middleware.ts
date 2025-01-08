@@ -10,12 +10,12 @@ export default class AuthMiddleware {
     console.log('i m middleware...')
     const token = ctx.request.header('Authorization')
     if (!token) {
-      throw new UnauthenticatedException()
+      throw new UnauthenticatedException('No token provided')
     }
     try {
       jwt.verify(token, 'UMANG')
     } catch (error) {
-      throw new UnauthenticatedException()
+      throw new UnauthenticatedException('Invalid token')
     }
 
     /**

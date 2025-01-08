@@ -16,7 +16,7 @@ router.get('/', async () => {
 })
 
 router.post('/login', '#controllers/auth_controller.login').use(middleware.another())
-router.get('/signup', '#controllers/auth_controller.signup')
+router.post('/signup', '#controllers/auth_controller.signup')
 router.post('/posting', async () => {
   return {
     posting: 'passed',
